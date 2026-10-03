@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>A Celebration of Love — Adnan & Humera</title>
+  <meta name="description" content="An exclusive digital Walima invitation for the wedding of Adnan & Humera.">
+  
+  <!-- Typography: Cormorant Garamond (Editorial Serif) & Manrope (Clean Modern Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Manrope:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Light Bokeh Overlay -->
+  <div class="ambient-bokeh-container" id="bokehContainer"></div>
+
+  <!-- Music Control Button -->
+  <button class="music-toggle" id="musicToggle" aria-label="Toggle Background Music">
+    <span class="music-icon">♫</span>
+    <span class="music-text">MUSIC</span>
+    <span class="music-waves">
+      <span></span><span></span><span></span>
+    </span>
+  </button>
+
+  <!-- Working High Quality Classical Romantic Track -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=cinematic-documentary-115669.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Phone Frame / Portrait Container -->
+  <main class="invitation-wrapper">
+    <div class="invitation-card-container" id="appContainer">
+
+      <!-- SECTION 1: CINEMATIC OPENING DOORS -->
+      <section class="screen active" id="secDoors">
+        <div class="doors-overlay">
+          <!-- Left Velvet Door -->
+          <div class="door-panel door-left" id="doorLeft">
+            <div class="door-texture"></div>
+            <div class="door-border-inner"></div>
+            <div class="door-emboss-pattern"></div>
+          </div>
+          <!-- Right Velvet Door -->
+          <div class="door-panel door-right" id="doorRight">
+            <div class="door-texture"></div>
+            <div class="door-border-inner"></div>
+            <div class="door-emboss-pattern"></div>
+          </div>
+
+          <!-- Door Center Content -->
+          <div class="door-center-content" id="doorContent">
+            <div class="monogram-badge">
+              <svg viewBox="0 0 100 100" class="monogram-ring-svg">
+                <circle cx="50" cy="50" r="46" class="ring-back"></circle>
+                <circle cx="50" cy="50" r="46" class="ring-glow"></circle>
+              </svg>
+              <!-- Monogram Initials -->
+              <span class="monogram-text">A H</span>
+            </div>
+            
+            <p class="subtitle-tag">WALIMA CELEBRATION</p>
+            
+            <button class="btn-primary-gold" id="btnEnter">
+              <span class="btn-text">TAP TO ENTER</span>
+              <span class="btn-shine"></span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: MONOGRAM REVEAL -->
+      <section class="screen" id="secMonogram">
+        <div class="content-panel text-center">
+          <div class="monogram-large-hero">
+            <h1>A &amp; H</h1>
+            <div class="animated-gold-line"></div>
+          </div>
+          <p class="hero-tagline">THE BEGINNING OF FOREVER</p>
+        </div>
+      </section>
+
+      <!-- SECTION 3: LUXURY LOADING -->
+      <section class="screen" id="secLoading">
+        <div class="content-panel text-center">
+          <p class="loader-tag">CURATING YOUR INVITATION</p>
+          <div class="progress-bar-container">
+            <div class="progress-fill" id="progressFill"></div>
+            <div class="progress-spark" id="progressSpark"></div>
+          </div>
+          <span class="progress-counter" id="progressCounter">0%</span>
+        </div>
+      </section>
+
+      <!-- MAIN INVITATION STORY SCROLLABLE AREA -->
+      <div class="scrollable-story-container hidden" id="storyContainer">
+
+        <!-- SECTION 4: COUPLE INTRO (REVEAL ON TAP) -->
+        <section class="story-section" id="secCouple">
+          <div class="glass-card text-center">
+            <p class="section-kicker">WALIMA RECEPTION</p>
+            
+            <div class="rings-interaction-area" id="ringsContainer">
+              <div class="rings-glow-halo" id="ringsHalo"></div>
+              <!-- Interactive Polished Champagne Gold Rings SVG -->
+              <svg class="rings-svg" id="ringsSvg" viewBox="0 0 200 120">
+                <defs>
+                  <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#fceabb" />
+                    <stop offset="50%" stop-color="#f8b500" />
+                    <stop offset="70%" stop-color="#dda835" />
+                    <stop offset="100%" stop-color="#9b7319" />
+                  </linearGradient>
+                </defs>
+                <!-- Ring 1 -->
+                <circle cx="75" cy="60" r="38" fill="none" stroke="url(#goldGrad)" stroke-width="7" class="ring-path ring-left" />
+                <!-- Ring 2 -->
+                <circle cx="125" cy="60" r="38" fill="none" stroke="url(#goldGrad)" stroke-width="7" class="ring-path ring-right" />
+                <!-- Solitaire Diamond Accent -->
+                <polygon points="75,14 81,22 75,30 69,22" fill="#ffffff" class="diamond-sparkle" />
+              </svg>
+              <span class="tap-hint-text" id="ringHint">TAP THE RINGS TO REVEAL</span>
+            </div>
+
+            <!-- COUPLE NAMES & QUOTE -->
+            <div class="couple-reveal-container hidden" id="coupleRevealBox">
+              <div class="names-display">
+                <h2 class="name-title">Adnan</h2>
+                <span class="ampersand">&amp;</span>
+                <h2 class="name-title">Humera</h2>
+              </div>
+              <div class="thin-gold-divider"></div>
+              <p class="romantic-quote">“Two souls, one beautiful journey.”</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 5: FAMILY INVITATION -->
+        <section class="story-section" id="secFamily">
+          <div class="editorial-card text-center">
+            <p class="section-kicker">WITH THE BLESSINGS OF THEIR FAMILIES</p>
+            
+            <div class="family-tree-block">
+              <div class="family-side">
+                <span class="lineage-label">SON OF</span>
+                <h3 class="parent-names">Mr. &amp; Mrs. Firoz khan</h3>
+              </div>
+              
+              <div class="thin-gold-divider"></div>
+
+              <div class="family-side">
+                <span class="lineage-label">DAUGHTER OF</span>
+                <h3 class="parent-names">Late Mr. &amp; Mrs. Anwar Shaikh</h3>
+              </div>
+            </div>
+
+            <div class="thin-gold-divider mb-lg"></div>
+
+            <p class="invitation-prose">
+              Together with their families,<br>
+              we invite you to celebrate<br>
+              their Walima reception.
+            </p>
+          </div>
+        </section>
+
+        <!-- SECTION 6: YOU ARE INVITED -->
+        <section class="story-section" id="secInvited">
+          <div class="cinematic-hero-card text-center">
+            <div class="light-sweep-overlay"></div>
+            <h2 class="invited-title">YOU ARE INVITED</h2>
+            <div class="thin-gold-divider"></div>
+            <p class="invited-subtitle">To share the joy of our Walima celebration.</p>
+          </div>
+        </section>
+
+        <!-- SECTION 7: SECRET KEY INTERACTION -->
+        <section class="story-section" id="secSecretBox">
+          <div class="glass-card text-center">
+            <p class="section-kicker">THERE'S MORE TO DISCOVER</p>
+
+            <div class="jewellery-box-wrapper" id="boxWrapper">
+              <div class="box-visual" id="boxVisual">
+                <div class="box-lid" id="boxLid"></div>
+                <div class="box-body">
+                  <div class="gold-lock" id="boxLock">
+                    <div class="keyhole"></div>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn-secondary-gold" id="btnUnlockBox">
+                <span class="btn-text">UNLOCK</span>
+              </button>
+            </div>
+
+            <div class="secret-message-panel hidden" id="secretNote">
+              <p class="secret-header">A little note from the family</p>
+              <div class="thin-gold-divider"></div>
+              <p class="secret-body">
+                “Your presence, love and prayers will make our celebration even more meaningful.”
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 8 & 9 & 10: MAIN SCRATCH CARD (DATE) -->
+        <section class="story-section" id="secScratch">
+          <div class="scratch-experience-card text-center">
+            <h3 class="scratch-title">ONE SECRET REMAINS</h3>
+            <p class="scratch-instructions">SCRATCH TO REVEAL</p>
+            <p class="scratch-subtext">Reveal what we've been waiting to share...</p>
+
+            <div class="scratch-canvas-container" id="scratchContainer">
+              <!-- Revealed Layer Underneath Canvas -->
+              <div class="revealed-date-layer" id="revealedDateLayer">
+                <div class="date-glow-halo"></div>
+                <span class="revealed-date-number">18</span>
+                <span class="revealed-date-month">OCTOBER</span>
+                <span class="revealed-date-year">2026</span>
+                <div class="save-the-date-pill">SAVE THE DATE</div>
+              </div>
+
+              <!-- HTML5 Canvas Scratch Layer -->
+              <canvas id="scratchCanvas" width="320" height="220"></canvas>
+            </div>
+
+            <!-- Scratch Real-time Progress -->
+            <div class="scratch-progress-indicator" id="scratchProgress">
+              <span id="scratchPercent">0%</span> revealed
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION: WALIMA DAWAT & TIMELINE -->
+<section class="story-section" id="secTimeline">
+  <div class="glass-card text-center">
+    <span class="section-kicker">SCHEDULE OF EVENTS</span>
+    <h2 class="section-title">WALIMA DAWAT</h2>
+    <div class="thin-gold-divider"></div>
+
+    <div class="editorial-timeline">
+      <div class="timeline-event-card">
+        <div class="timeline-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="timeline-details">
+          <h4>WALIMA CEREMONY</h4>
+          <span class="event-time">8:00 PM</span>
+        </div>
+      </div>
+
+      <div class="timeline-event-card">
+        <div class="timeline-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+        </div>
+        <div class="timeline-details">
+          <h4>DINNER</h4>
+          <span class="event-time">8:30 PM</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Countdown Timer Component -->
+    <div style="margin-top: 40px;">
+      <span class="section-kicker">COUNTDOWN TO THE SPECIAL DAY</span>
+      <div class="countdown-container">
+        <div class="countdown-box">
+          <span class="countdown-number" id="daysCount">00</span>
+          <span class="countdown-label">DAYS</span>
+        </div>
+        <div class="countdown-box">
+          <span class="countdown-number" id="hoursCount">00</span>
+          <span class="countdown-label">HOURS</span>
+        </div>
+        <div class="countdown-box">
+          <span class="countdown-number" id="minsCount">00</span>
+          <span class="countdown-label">MINS</span>
+        </div>
+        <div class="countdown-box">
+          <span class="countdown-number" id="secsCount">00</span>
+          <span class="countdown-label">SECS</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+        <!-- SECTION 13: VENUE - LUXURY MAP -->
+        <section class="story-section" id="secVenue">
+          <div class="glass-card text-center">
+            <h2 class="section-title">THE VENUE</h2>
+            <div class="thin-gold-divider"></div>
+
+            <h3 class="venue-name">Jashn Banquet</h3>
+            <p class="venue-location">Holy Cross High School, Kurla West, opp. Dominos Pizza, Kurla West, Kurla, Mumbai, Maharashtra 400070, India</p>
+
+            <div class="luxury-map-card">
+              <div class="map-grid-overlay"></div>
+              <svg class="map-graphics-svg" viewBox="0 0 300 160">
+                <path d="M 30,130 Q 100,20 150,90 T 270,30" class="map-route-line" />
+                <g class="map-pin-group" transform="translate(150, 85)">
+                  <circle cx="0" cy="0" r="14" class="pin-pulse"></circle>
+                  <circle cx="0" cy="0" r="6" class="pin-core"></circle>
+                </g>
+              </svg>
+            </div>
+
+            <div class="venue-actions">
+              <a href="https://maps.google.com/?q=Jashn+Banquet+Holy+Cross+High+School+Kurla+West+Mumbai" target="_blank" rel="noopener" class="btn-secondary-gold">
+                GET DIRECTIONS
+              </a>
+              <a href="https://maps.google.com/?q=Jashn+Banquet+Holy+Cross+High+School+Kurla+West+Mumbai" target="_blank" rel="noopener" class="btn-secondary-gold">
+                OPEN MAP
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 14: BLESSINGS -->
+        <section class="story-section" id="secBlessings">
+          <div class="ivory-card text-center">
+            <div class="gold-ornament-svg">
+              <svg viewBox="0 0 60 20" width="60" height="20">
+                <path d="M0 10 Q15 0 30 10 Q45 20 60 10" fill="none" stroke="#d4af37" stroke-width="1.5" />
+              </svg>
+            </div>
+            <h2 class="section-title-dark">YOUR BLESSINGS</h2>
+            <p class="blessings-prose">
+              Your presence, love and prayers will make our Walima celebration even more meaningful.
+            </p>
+          </div>
+        </section>
+
+        <!-- SECTION 15: WHATSAPP SHARE -->
+        <section class="story-section" id="secShare">
+          <div class="glass-card text-center">
+            <p class="section-kicker">SHARE THE JOY</p>
+            <p class="share-subtext">Send this luxury invitation directly to loved ones.</p>
+            
+            <button class="btn-whatsapp" id="btnWhatsappShare">
+              <svg viewBox="0 0 24 24" width="20" height="20" class="wa-icon">
+                <path fill="currentColor" d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+              </svg>
+              <span>SHARE VIA WHATSAPP</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- SECTION 16: FINAL CINEMATIC ENDING -->
+        <section class="story-section" id="secClosing">
+          <div class="glass-card text-center closing-card">
+            <div class="closing-light-glow"></div>
+            
+            <span class="closing-tag">WITH LOVE</span>
+            <h2 class="closing-couple-names">ADNAN &amp; HUMERA</h2>
+            <p class="closing-subtitle">WE CAN'T WAIT TO CELEBRATE WITH YOU</p>
+
+            <div class="monogram-badge small-monogram">
+              <span class="monogram-text">A H</span>
+            </div>
+
+            <button class="btn-primary-gold" id="btnRevisit">
+              <span class="btn-text">REVISIT INVITATION</span>
+              <span class="btn-shine"></span>
+            </button>
+          </div>
+        </section>
+
+      </div><!-- /storyContainer -->
+
+    </div><!-- /invitation-card-container -->
+  </main>
+
+  <!-- Gold Particle Explosion Overlay Canvas -->
+  <canvas id="burstCanvas" class="burst-overlay-canvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
